@@ -15,6 +15,7 @@
 		8F897F241C81E6DA002D7077 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F897F221C81E6DA002D7077 /* LaunchScreen.storyboard */; };
 		8F897F2F1C81E6DA002D7077 /* HealthKitStudyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F897F2E1C81E6DA002D7077 /* HealthKitStudyTests.m */; };
 		8F897F3A1C81E6DA002D7077 /* HealthKitStudyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F897F391C81E6DA002D7077 /* HealthKitStudyUITests.m */; };
+		8F897F491C81E6E0002D7077 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F897F481C81E6E0002D7077 /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		8F897F351C81E6DA002D7077 /* HealthKitStudyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthKitStudyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F897F391C81E6DA002D7077 /* HealthKitStudyUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HealthKitStudyUITests.m; sourceTree = "<group>"; };
 		8F897F3B1C81E6DA002D7077 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F897F471C81E6E0002D7077 /* HealthKitStudy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HealthKitStudy.entitlements; sourceTree = "<group>"; };
+		8F897F481C81E6E0002D7077 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F897F491C81E6E0002D7077 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +85,7 @@
 		8F897F081C81E6DA002D7077 = {
 			isa = PBXGroup;
 			children = (
+				8F897F481C81E6E0002D7077 /* HealthKit.framework */,
 				8F897F131C81E6DA002D7077 /* HealthKitStudy */,
 				8F897F2D1C81E6DA002D7077 /* HealthKitStudyTests */,
 				8F897F381C81E6DA002D7077 /* HealthKitStudyUITests */,
@@ -101,6 +106,7 @@
 		8F897F131C81E6DA002D7077 /* HealthKitStudy */ = {
 			isa = PBXGroup;
 			children = (
+				8F897F471C81E6E0002D7077 /* HealthKitStudy.entitlements */,
 				8F897F171C81E6DA002D7077 /* AppDelegate.h */,
 				8F897F181C81E6DA002D7077 /* AppDelegate.m */,
 				8F897F1A1C81E6DA002D7077 /* ViewController.h */,
@@ -208,6 +214,11 @@
 					8F897F101C81E6DA002D7077 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = 8LP9D6LSH6;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					8F897F291C81E6DA002D7077 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -416,10 +427,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HealthKitStudy/HealthKitStudy.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = HealthKitStudy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wl.HealthKitStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -427,10 +442,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HealthKitStudy/HealthKitStudy.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = HealthKitStudy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wl.HealthKitStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
